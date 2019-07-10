@@ -1,0 +1,6 @@
+*.html
+*.xml
+*.class
+*.iml
+Threads/build/
+Threads/.gradle/
