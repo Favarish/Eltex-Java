@@ -35,14 +35,15 @@ public class Main {
             try {
                 FileReader fileReader = new FileReader(dirTemp);
 
-                String tempStr = "";
+                StringBuilder tempStr = new StringBuilder();
                 int c;
                 while ((c = fileReader.read()) != -1) {
                     if ((char) c == '(') {
                         while ((char) (c = fileReader.read()) != ')') {
-                            tempStr += (char) c;
+                            tempStr.append((char) c);
                         }
-                        pidName.put(str, tempStr);
+                        pidName.put(str, tempStr.toString());
+                        break;
                     }
                 }
 
