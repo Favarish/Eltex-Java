@@ -2,5 +2,11 @@
 *.xml
 *.class
 *.iml
-Threads/build/
-Threads/.gradle/
+NIO2/build/
+settings.gradle
+gradlew.bat
+gradlew
+.gradle/
+gradle/
+.idea/
+*/build/
