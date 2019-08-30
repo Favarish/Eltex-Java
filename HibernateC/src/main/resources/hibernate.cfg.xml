@@ -7,7 +7,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test?createDatabaseIfNotExist=true</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">Enrfrhzrhz427</property>
+        <property name="hibernate.connection.password">password</property>
         <mapping class="ru.eltex.User"/>
         <mapping class="ru.eltex.Passport"/>
         <mapping class="ru.eltex.Lang"/>
