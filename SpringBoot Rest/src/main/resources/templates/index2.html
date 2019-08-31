@@ -12,7 +12,52 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
--
+<div id="test1"></div>
+<script type="text/javascript">
 
+var  globalData;
+
+    $(document).ready(function () {
+        $.get("/get_information",
+            function (data) {
+            globalData = data;
+                let div = document.createElement('div');
+                div.className = 'test1';
+            }
+        );
+
+
+    })
+
+function replaceButton(event) {
+    $(".test1").html(globalData[0].fio + " " + globalData[1].fio);
+    globalData[1].fio = "Inna";
+
+}
+    function printData() {
+        var str = "" ;
+        for (var i = 0; i < globalData.length; i++) {
+            str += globalData[i].id + " " + globalData[i].fio + " " + globalData[i].phone + "<br>";
+        }
+        alert(str);
+    }
+
+function sendToServer() {
+    $.get("sendQuery/" + globalData[1].id + "/" + globalData[1].fio);
+}
+
+</script>
+<p>Немного текста, чтобы не было так скучно</p>
+<button id="button1">
+    Привет, кому-нибудь
+</button>
+<br>
+<button class="test1" id="button2", onclick="replaceButton()">
+    Изменить строчку 2 и вывести в div
+</button>
+<button onclick="printData()">Вывести все строчки</button>
+<p id="par">Я просто текст, который, возможно, изменится</p>
+<div >пуст</div>
+<button onclick="sendToServer()">Отправить второй объект на сервер</button>
 </body>
 </html>
